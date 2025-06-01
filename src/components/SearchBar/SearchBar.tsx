@@ -6,7 +6,7 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ onSubmit }: SearchBarProps) {
-  const handleSubmit = (formData: FormData): void => {
+  const handleSubmit = (formData: FormData) => {
     const filmQuery = formData.get("query") as string;
     if (!filmQuery) {
       toast.error("Please enter your search query.");

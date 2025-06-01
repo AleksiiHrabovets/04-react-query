@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 interface MovieModalProps {
   onClose: () => void;
-  movie: Movie;
+  movie: Movie | null;
 }
 
 export default function MovieModal({ onClose, movie }: MovieModalProps) {
@@ -31,6 +31,7 @@ export default function MovieModal({ onClose, movie }: MovieModalProps) {
     };
   }, [onClose]);
 
+  if (!movie) return null;
   return createPortal(
     <div
       onClick={handleBackdropClick}
